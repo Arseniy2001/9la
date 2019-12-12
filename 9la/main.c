@@ -38,6 +38,26 @@ int main()
   for (int k = 1; k <= n; k++)
   {
       ik =mod(i*max(j,l),30)+mod(j*min(i,l) , 20)+k;
+      jk = min(l,max(j,min(l,max(i-l,j-l))));
+      lk = sign(k-10)*module(i-j+l-k);
+      if (((10-ik)*(10-ik)+(10-jk)*(10-jk)>=r*r) && ((10-ik)*(10-ik)+(10-jk)*(10-jk)<=R*R))
+    {
+        printf ("%s %d %s %d %d %s %d %s", " Точка попала в область, шаг попадания:",k ,"\n Ее координаты:", ik, jk, "\nПараметор движения:", lk, "\n");
+        k=52;
+        p=1;
+    }
+      i=ik;
+      j=jk;
+      l=lk;
+  }
+    if (p==0) {
+        int h=52;
+        printf("%s %d %d %s %d %s %d %s", " Точка не попала в область,ее координаты:",i,j ,"\n номер шага:",h,"\nПараметор движения:", l, "\n");
+        }
+    return 0;
+}
+
+
       printf("%d", ik);
       jk = min(l,max(j,min(l,max(i-l,j-l))));
       lk = sign(k-10)*module(i-j+l-k);
